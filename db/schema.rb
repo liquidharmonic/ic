@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170729203819) do
     t.string "zip_code", limit: 6
     t.boolean "over_21", default: false
     t.boolean "access_car", default: false
+    t.boolean "background_check", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

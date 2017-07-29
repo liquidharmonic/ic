@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :zip_code, limit: 6
       t.boolean :over_21, default: false
       t.boolean :access_car, default: false
+      t.boolean :background_check, default: false
 
       t.timestamps
     end
