@@ -36,7 +36,10 @@ gem 'jbuilder', '~> 2.5'
 # Frontend
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'slim-rails', '~>3.1.1'
+gem 'jquery-rails', '~>4.3.1'
+
 gem 'sidekiq', '~>5.0.4'
+
 
 
 group :development, :test do
