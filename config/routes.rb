@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get '/' => 'application#show'
   get '/apply' => 'application#apply'
-
+  post '/users' => 'users#create'
 end

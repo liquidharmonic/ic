@@ -1,7 +1,7 @@
 .text-center
   h3 Please fill out the following information to apply to instacart
   p
-    = form_for(User.new, url: "/apply", method: 'post', class: 'navbar-form.navbar-left') do |f|
+    = form_for(User.new, url: {action: 'create', controller: 'user'}, class: 'navbar-form.navbar-left') do |f|
       .form-group
         = f.label :first_name
         = f.text_field :first_name
