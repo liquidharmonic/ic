@@ -1,18 +1,26 @@
-h3
-  = form_tag("/apply", method: 'post', class: 'navbar-form navbar-left')
-    .form-group
-      = label_tag(:first_name, 'First Name')
-      = text_field_tag(:first_name)
-    .form-group
-      = label_tag(:last_name, 'Last Name')
-      = text_field_tag(:last_name)
-    .form-group
-      = label_tag(:email, 'Email')
-      = text_field_tag(:email)
-    .form-group
-      = label_tag(:first_name, 'First Name')
-      = text_field_tag(:first_name)
-    .form-group
-      = label_tag(:first_name, 'First Name')
-      = text_field_tag(:first_name)
-    = submit_tag("Apply")
+.text-center
+  h3 Please fill out the following information to apply to instacart
+  p
+    = form_for(User.new, url: "/apply", method: 'post', class: 'navbar-form.navbar-left') do |f|
+      .form-group
+        = f.label :first_name
+        = f.text_field :first_name
+      .form-group
+        = f.label :last_name
+        = f.text_field :last_name
+      .form-group
+        = f.label :email
+        = f.text_field :email
+      .form-group
+        = f.label :phone_number
+        = f.text_field :phone_number
+      .form-group
+        = f.label :zip_code
+        = f.text_field :zip_code
+      .form-group
+        = f.label :over_21, 'Are you over 21?'
+        = f.check_box :over_21
+      .form-group
+        = f.label :access_car, 'Do you have regular access to a car?'
+        = f.check_box :access_car
+      = f.submit("Apply")
