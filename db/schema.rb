@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20170729203819) do
     t.string "first_name", limit: 255
     t.string "last_name", limit: 255
     t.string "email"
-    t.string "phone_number", limit: 8
+    t.string "phone_number", limit: 12
     t.string "zip_code", limit: 6
     t.boolean "over_21", default: false
     t.boolean "access_car", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["phone_number"], name: "index_users_on_phone_number"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["phone_number"], name: "index_users_on_phone_number", unique: true
     t.index ["zip_code"], name: "index_users_on_zip_code"
   end
 
