@@ -16,6 +16,4 @@ class UsersController < ActionController::Base
     params.require(:user).permit(:first_name, :last_name, :email,:phone_number, :zip_code, :over_21, :access_car)
   end
 
-
-
 end

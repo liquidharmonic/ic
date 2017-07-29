@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
   def apply
   end
 
+  def background_check
+  end
+
+  def done
+  end
+
 end

@@ -1,7 +1,7 @@
 .text-center
   h3 Please fill out the following information to apply to instacart
   p
-    = form_for(User.new, url: {action: 'create', controller: 'user'}, class: 'navbar-form.navbar-left') do |f|
+    = form_for(User.new, remote: true, url: {action: 'create', controller: 'users'}, class: 'navbar-form.navbar-left', id: '#new_user') do |f|
       .form-group
         = f.label :first_name
         = f.text_field :first_name
@@ -24,3 +24,13 @@
         = f.label :access_car, 'Do you have regular access to a car?'
         = f.check_box :access_car
       = f.submit("Apply")
+
+javascript:
+  $(document).ready(function() {
+    return $("#new_user").on("ajax:success", function(e, data, status, xhr) {
+      window.user_id  = data['user']['id']
+      window.location = '/background_check'
+    }).on("ajax:error", function(e, xhr, status, error) {
+      return $("#new_user").append("<p>ERROR</p>");
+    });
+  });

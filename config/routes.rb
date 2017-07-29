@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   get '/' => 'application#show'
   get '/apply' => 'application#apply'
+  get 'background_check' => 'application#background_check'
+  get 'done' => 'application#done'
   post '/users' => 'users#create'
 end
