@@ -6,8 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :phone_number, limit: 8
       t.string :zip_code, limit: 6
-      t.bool :over_21
-      t.bool :access_car
+      t.boolean :over_21, default: false
+      t.boolean :access_car, default: false
 
       t.timestamps
     end
