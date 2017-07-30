@@ -1,9 +1,11 @@
 class UsersController < ActionController::Base
+  include AnnonymousUserConcern
 
   def create
     @user = User.create(user_params)
 
     if @user.valid?
+      AnnonymousUser.create(key: annonymous_user_id, user: @user)
       render json: @user
     else
       render json: {:errors => @user.errors.full_messages}, status:422
