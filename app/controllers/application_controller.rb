@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def background_check
+    # TODO update user's background_check column
     EventWorker.perform_async(annonymous_user_id, 'Onboarding - 3 ask for background check')
   end
 
