@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 20170729203819) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "annonymous_user_id"
+    t.string "annonymous_key"
     t.string "action"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["annonymous_user_id"], name: "index_events_on_annonymous_user_id"
+    t.index ["annonymous_key"], name: "index_events_on_annonymous_key"
   end
 
   create_table "users", force: :cascade do |t|

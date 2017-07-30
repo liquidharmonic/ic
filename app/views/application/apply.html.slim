@@ -28,7 +28,6 @@
 javascript:
   $(document).ready(function() {
     return $("#new_user").on("ajax:success", function(e, data, status, xhr) {
-      window.user_id  = data['user']['id']
       window.location = '/background_check'
     }).on("ajax:error", function(e, xhr, status, error) {
       return $("#new_user").append("<p>ERROR</p>");
