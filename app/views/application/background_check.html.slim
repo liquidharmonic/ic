@@ -1,0 +1,8 @@
+.text-center
+  h3 instacart needs to run a background check to proceed with your application. Will you allow instacart to run the check?
+
+  = form_for(User.new, url: {action: 'done', controller: 'application'}, method: 'get', class: 'navbar-form.navbar-left', id: '#background_check') do |f|
+    .form-group
+      = f.label :background_check, 'Do you consent to instacart running a background check?'
+      = f.check_box :background_check
+    = f.submit "Continue"
